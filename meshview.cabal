@@ -1,13 +1,12 @@
 name:           meshview
 version:        0.1.0.0
-synopsis:       Short description of your package
+synopsis:       Performant 3D mesh viewer
 description:    Please see the README on Github at <https://github.com/githubuser/meshview#readme>
-homepage:       https://github.com/githubuser/meshview#readme
-bug-reports:    https://github.com/githubuser/meshview/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2018 Author name here
-license:        BSD3
+homepage:       https://github.com/ksaveljev/meshview#readme
+bug-reports:    https://github.com/ksaveljev/meshview/issues
+author:         Konstantin Saveljev
+copyright:      2018 Michael Fogleman, Konstantin Saveljev
+license:        MIT
 license-file:   LICENSE
 build-type:     Simple
 cabal-version:  >= 1.10
@@ -23,10 +22,12 @@ executable meshview
   main-is: Main.hs
   hs-source-dirs:
       src
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -O0 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
     , GLFW-b >= 1.4 && < 1.5
+    , OpenGL >= 3.0 && < 3.1
   other-modules:
       Paths_meshview
+    , Util.GLFW
   default-language: Haskell2010
